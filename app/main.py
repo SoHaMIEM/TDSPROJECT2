@@ -2,6 +2,7 @@ from fastapi import FastAPI, File, UploadFile, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from typing import Optional
+from fastapi.responses import RedirectResponse
 from app.utils.openai_client import get_openai_response
 from app.utils.file_handler import save_upload_file_temporarily
 
@@ -33,6 +34,11 @@ async def process_question(
         return {"answer": answer}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/")
+async def root():
+    return RedirectResponse(url="/docs")
+
 
 if __name__ == "__main__":
     import uvicorn

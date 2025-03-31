@@ -10,6 +10,8 @@ import subprocess
 from typing import Optional, Dict, Any, List
 from dotenv import load_dotenv
 from app.utils.functions import *
+#from app.utils.duckdb_utils import generate_duckdb_query  # Adjusted import path
+#from app.utils.transcription import transcribe_youtube_segment  # Import the missing function
 
 load_dotenv()
 
