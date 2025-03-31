@@ -94,7 +94,7 @@ ml-dtypes==0.3.2
 mtcnn==0.1.1
 multidict==6.1.0
 mysql-connector-python==8.0.31
-mysqlclient==2.2.5
+pymysql==1.0.2
 namex==0.0.7
 nest-asyncio==1.6.0
 networkx==3.3
