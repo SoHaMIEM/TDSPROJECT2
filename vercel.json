@@ -8,8 +8,15 @@
   ],
   "routes": [
     {
+      "src": "/",
+      "dest": "/docs"
+    },
+    {
       "src": "/(.*)",
       "dest": "app/main.py"
     }
-  ]
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.10"
+  }
 }
