@@ -1,8 +1,9 @@
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-import os
-from typing import Optional
 from fastapi.responses import RedirectResponse
+from typing import Optional
+import os
+
 from app.utils.openai_client import get_openai_response
 from app.utils.file_handler import save_upload_file_temporarily
 
@@ -39,6 +40,10 @@ async def process_question(
 async def root():
     return RedirectResponse(url="/docs")
 
+# Vercel requires an ASGI handler
+if "VERCEL" in os.environ:
+    from mangum import Mangum
+    handler = Mangum(app)  # Vercel ASGI compatibility
 
 if __name__ == "__main__":
     import uvicorn
