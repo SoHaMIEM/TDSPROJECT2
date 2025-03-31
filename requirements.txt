@@ -133,7 +133,6 @@ python-engineio==4.9.1
 python-multipart==0.0.20
 python-socketio==5.11.3
 pytz==2024.1
-pywin32==305
 pyzmq==25.0.0
 requests==2.31.0
 requests-toolbelt==1.0.0
