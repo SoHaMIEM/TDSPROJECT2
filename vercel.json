@@ -4,20 +4,11 @@
     {
       "src": "app/main.py",
       "use": "@vercel/python",
-      "config": {
-        "pythonVersion": "3.10"
-      }
+      "config": { "runtime": "python3.10" }
     }
   ],
   "routes": [
-    {
-      "src": "/",
-      "dest": "/docs"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "app/main.py"
-    }
-  ],
-  "buildCommand": "apt-get update && apt-get install -y default-libmysqlclient-dev && pip install -r requirements.txt"
+    { "src": "/", "dest": "/docs" },
+    { "src": "/(.*)", "dest": "app/main.py" }
+  ]
 }
